@@ -16,15 +16,15 @@ function App() {
         <TidyTasks />
       </div>
       <p className="read-the-docs">
-        Read the
+        Created by {""}
         <a
-          href="https://daisyui.com/docs/layout-and-typography/"
+          href="https://github.com/kminchk"
           className="underline"
           target="_blank"
         >
-          docs
+          MinDev01
         </a>
-        to get started.
+        {""} - Tel. 096-806-3563
       </p>
     </>
   );

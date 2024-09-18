@@ -80,13 +80,23 @@ function TidyTasks() {
           </div>
         </div>
         <div className="flex items-center mt-4">
-          <input
-            type="text"
+          <textarea
             placeholder="Add Task"
-            className="input input-bordered flex-grow mr-2"
+            className="flex-grow mr-2 p-2 border rounded resize-none overflow-hidden"
             value={newTask}
-            onChange={(e) => setNewTask(e.target.value)}
-            onKeyPress={(e) => e.key === "Enter" && addTask()}
+            onChange={(e) => {
+              setNewTask(e.target.value);
+              e.target.style.height = "auto";
+              e.target.style.height = e.target.scrollHeight + "px";
+            }}
+            onKeyPress={(e) => {
+              if (e.key === "Enter" && !e.shiftKey) {
+                e.preventDefault();
+                addTask();
+              }
+            }}
+            rows={1}
+            style={{ minHeight: "40px" }}
           />
           <button
             className="btn-circle bg-gray-100 text-red-500 p-2"
