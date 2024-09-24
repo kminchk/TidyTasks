@@ -59,10 +59,10 @@ function TidyTasks() {
             {tasks.map((task) => (
               <div
                 key={task.id}
-                className="flex items-center p-2 rounded bg-base-200 text-2xl"
+                className="flex items-start p-2 rounded bg-base-200 text-2xl"
               >
                 <p
-                  className={`flex-grow cursor-pointer text-white ${
+                  className={`flex-grow cursor-pointer text-white break-words mr-2 ${
                     task.completed ? "line-through decoration-red-500" : ""
                   }`}
                   onClick={() => toggleTask(task.id)}
@@ -71,7 +71,7 @@ function TidyTasks() {
                 </p>
                 <button
                   onClick={() => deleteTask(task.id)}
-                  className="text-red-500 hover:text-red-700 ml-2"
+                  className="text-red-500 hover:text-red-700 ml-2 flex-shrink-0"
                 >
                   <RemoveCircleIcon />
                 </button>
